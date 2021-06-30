@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Add Employee</h2>
+<mat-dialog-content class="mat-typography">
+</mat-dialog-content>
+
+<form >
+  
+    <label>Code:</label><br>
+    <input  [(ngModel)]="employees.code" name="code" type="text" ><br>
+    <label>Name:</label><br>
+    <input  [(ngModel)]="employees.name" name="name" type="text" required><br>
+    <label>Age:</label><br>
+    <input  [(ngModel)]="employees.age" name="age" type="number" required><br>
+    <label>Designation:</label><br>
+    <input  [(ngModel)]="employees.designation" name="designation" type="text" required><br>
+    <label>Address:</label><br>
+    <input  [(ngModel)]="employees.address" name="address" type="text" required><br>
+  </form> 
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="add()">ADD</button>
+</mat-dialog-actions>

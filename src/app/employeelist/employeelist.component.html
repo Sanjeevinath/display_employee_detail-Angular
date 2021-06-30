@@ -1,0 +1,52 @@
+<div class="toolbar" role="banner">
+    <img
+      width="40"
+      alt="Angular Logo"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+    />
+    <h2>Welcome to <span class="intro">Employee Database</span></h2>
+    
+  </div>
+  
+<div class="table-class">
+
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Designation</th>
+            <th>Address</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let employee of employees;">
+            <tr>
+                <td>{{employee.code | uppercase}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.age}}</td>
+                <td>{{employee.designation}}</td>
+                <td>{{employee.address}}</td>
+               
+            </tr>
+        </ng-container>
+        <tr *ngIf="!employees">
+            <td colspan="5">
+                Loading data. Please wait...
+            </td>
+        </tr>
+
+        <tr *ngIf="employees && employees.length==0">
+            <td colspan="5">
+                No employee records to display
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class ="btn-btn">
+    <button class="btn" type="button" (click)="addRow()">Add Row</button>
+</div>
